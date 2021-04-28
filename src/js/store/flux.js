@@ -51,6 +51,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 							}
 						});
 					})
+					.then(data => {
+						const store = getStore();
+						const actions = getActions();
+						store.planets.results.map((element, index) => {
+							const uid = element.uid;
+							actions.getCharacter(uid, "planets");
+						});
+						store.people.results.map((element, index) => {
+							const uid = element.uid;
+							actions.getCharacter(uid, "people");
+						});
+					})
 					.catch(error => {
 						console.log(error);
 					});
@@ -64,7 +76,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(data => {
 						const store = getStore();
-						console.log(data);
+
 						setStore({
 							...store,
 							[attribute]: {
@@ -81,6 +93,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => {
 						console.log(error);
 					});
+			},
+			setInfo: attribute => {
+				const store = getStore();
+				store[attribute].results.map((element, index) => {
+					const uid = element.uid;
+					getCharacter(uid, attribute);
+				});
 			},
 			changeColor: (index, color) => {
 				//get the store

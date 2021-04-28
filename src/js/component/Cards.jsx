@@ -10,15 +10,17 @@ export const Cards = ({ group }) => {
 		/* Map card */
 		<div className="card-deck">
 			<div className="">{store[group].title}</div>
-			{store[group].results.map((element, index) => {
-				return <Card key={element.uid} uid={element.uid} attribute={store[group].attribute} />;
-			})}
+			{store[group].results.length >= 10 ? (
+				store[group].results.map((element, index) => {
+					return <Card key={element.uid} uid={element.uid} attribute={store[group].attribute} />;
+				})
+			) : (
+				<div>{"Loading"}</div>
+			)}
 		</div>
 	);
 };
 
 Cards.propTypes = {
-	group: PropTypes.object
+	group: PropTypes.string
 };
-
-/* 	 */
