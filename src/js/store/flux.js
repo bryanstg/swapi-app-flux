@@ -64,7 +64,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(data => {
 						const store = getStore();
-						console.log(data);
 						setStore({
 							...store,
 							[attribute]: {
