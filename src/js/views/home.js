@@ -9,7 +9,7 @@ export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="text-center mt-5">
+		<div className="container p-4 text-center mt-5">
 			<Cards group={store.people.attribute} />
 			<Cards group={store.planets.attribute} />
 		</div>
