@@ -15,24 +15,24 @@ export const Card = ({ uid, attribute }) => {
 	return (
 		<React.Fragment>
 			{objInfo !== undefined ? (
-				<div className="card" style={{ minWidth: "10rem", width: "12rem" }}>
+				<div className="card card-style text-left my-2" style={{ width: "20rem" }}>
 					<img src={Placeh} className="card-img-top" alt="400x200" />
 					{attribute === "people" ? (
 						<div className="card-body">
 							<h3 className="card-title">{`${objInfo.properties.name}`}</h3>
-							<p className="card-text">{`Gender: ${objInfo.properties.gender}`}</p>
-							<p className="card-text">{`Hair Color: ${objInfo.properties.hair_color}`}</p>
-							<p className="card-text">{`Eyes Color: ${objInfo.properties.eye_color}`}</p>
+							<p className="card-text mb-1">{`Gender: ${objInfo.properties.gender}`}</p>
+							<p className="card-text mb-1">{`Hair Color: ${objInfo.properties.hair_color}`}</p>
+							<p className="card-text mb-1">{`Eyes Color: ${objInfo.properties.eye_color}`}</p>
 						</div>
 					) : (
 						<div className="card-body">
 							<h3 className="card-title">{`${objInfo.properties.name}`}</h3>
-							<p className="card-text">{`Population: ${objInfo.properties.population}`}</p>
-							<p className="card-text">{`Terrain: ${objInfo.properties.terrain}`}</p>
+							<p className="card-text mb-1">{`Population: ${objInfo.properties.population}`}</p>
+							<p className="card-text mb-1">{`Terrain: ${objInfo.properties.terrain}`}</p>
 						</div>
 					)}
-					<div className="card-footer">
-						<button type="button" className="btn btn-primary">
+					<div className="card-footer d-flex justify-content-between py-2">
+						<button type="button" className="btn btn-outline-primary">
 							{"Learn more"}
 						</button>
 						<button type="button" className="btn btn-outline-warning">
