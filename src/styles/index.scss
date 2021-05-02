@@ -1,3 +1,27 @@
 /* 
     General Styles
 */
+.card-riel {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.cards-title {
+    font-size: 1.5rem;
+    color: red;
+}
+.card-style {
+    min-width: 16rem;
+    display: inline-block;
+    float: none;
+
+    h3 {
+        font-size: 1rem;
+    }
+    p {
+        font-size: 0.8rem;
+    }
+    .btn-outline-warning i:hover {
+        color: #242424;
+    }
+}
+

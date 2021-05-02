@@ -11,7 +11,7 @@ export const Favorites = () => {
 				data-toggle="dropdown"
 				aria-haspopup="true"
 				aria-expanded="false">
-				{"Favorites"} <span>{"counter"}</span>
+				{"Favorites"} <span>{"0"}</span>
 			</a>
 
 			<div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
