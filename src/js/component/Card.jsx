@@ -7,10 +7,12 @@ import { Context } from "../store/appContext.js";
 
 //Images
 import Placeh from "../../img/400x200.png";
+import { useHistory } from "react-router";
 
 export const Card = ({ uid, attribute }) => {
 	const { store, actions } = useContext(Context);
 	const objInfo = store[attribute].info[uid];
+	const history = useHistory();
 
 	return (
 		<React.Fragment>
@@ -32,7 +34,12 @@ export const Card = ({ uid, attribute }) => {
 						</div>
 					)}
 					<div className="card-footer d-flex justify-content-between py-2">
-						<button type="button" className="btn btn-outline-primary">
+						<button
+							type="button"
+							className="btn btn-outline-primary"
+							onClick={event => {
+								history.push("/LearnMore/:id");
+							}}>
 							{"Learn more"}
 						</button>
 						<button type="button" className="btn btn-outline-warning">
