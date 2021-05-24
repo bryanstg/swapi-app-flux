@@ -44,7 +44,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						const store = getStore();
 
 						setStore({
-							...store,
 							[pointer]: {
 								...store[pointer],
 								results: data.results
@@ -78,7 +77,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						const store = getStore();
 
 						setStore({
-							...store,
 							[attribute]: {
 								...store[attribute],
 								info: {
