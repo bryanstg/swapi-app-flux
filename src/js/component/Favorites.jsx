@@ -4,14 +4,14 @@ export const Favorites = () => {
 	return (
 		<div className="dropdown">
 			<a
-				className="btn btn-secondary dropdown-toggle"
+				className="btn btn-primary dropdown-toggle"
 				href="#"
 				role="button"
 				id="dropdownMenuLink"
 				data-toggle="dropdown"
 				aria-haspopup="true"
 				aria-expanded="false">
-				{"Favorites"} <span>{"0"}</span>
+				{"Favorites"} <span className="bg-secondary ">{"0"}</span>
 			</a>
 
 			<div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
