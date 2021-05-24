@@ -8,6 +8,7 @@ import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/Navbar.jsx";
+import { LearnMore } from "./views/LearnMore.jsx";
 
 //create your first component
 const Layout = () => {
@@ -27,8 +28,8 @@ const Layout = () => {
 						<Route exact path="/demo">
 							<Demo />
 						</Route>
-						<Route exact path="/single/:theid">
-							<Single />
+						<Route exact path="/learn-more/:attribute/:uid">
+							<LearnMore />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
