@@ -7,7 +7,7 @@ import { Context } from "../store/appContext.js";
 
 //Images
 import Placeh from "../../img/400x200.png";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 
 export const Card = ({ uid, attribute }) => {
 	const { store, actions } = useContext(Context);
@@ -38,7 +38,7 @@ export const Card = ({ uid, attribute }) => {
 							type="button"
 							className="btn btn-outline-primary"
 							onClick={event => {
-								history.push("/LearnMore/:id");
+								history.push(`/learn-more/:${attribute}/:${uid}`);
 							}}>
 							{"Learn more"}
 						</button>

@@ -10,8 +10,8 @@ export const Home = () => {
 
 	return (
 		<div className="container p-4 text-center mt-5">
-			<Cards group={store.people.attribute} />
-			<Cards group={store.planets.attribute} />
+			<Cards attribute={store.people.attribute} />
+			<Cards attribute={store.planets.attribute} />
 		</div>
 	);
 };
