@@ -38,7 +38,7 @@ export const Card = ({ uid, attribute }) => {
 							type="button"
 							className="btn btn-outline-primary"
 							onClick={event => {
-								history.push(`/learn-more/:${attribute}/:${uid}`);
+								history.push(`/learn-more/${attribute}/${uid}`);
 							}}>
 							{"Learn more"}
 						</button>
