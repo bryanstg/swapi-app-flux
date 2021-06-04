@@ -33,6 +33,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
+			//Get all the info from a pointer in the API
 			getSwapi: pointer => {
 				fetch(`${API_URI}/${pointer}`)
 					.then(response => {
