@@ -106,7 +106,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore();
 
 				const newFavorites = store.favorites.filter(obj => {
-					return objInfo.uid !== obj.uid;
+					console.log(objInfo.uid, obj.uid);
+					console.log(objInfo.properties.name, obj.properties.name);
+					return objInfo.uid !== obj.uid && objInfo.properties.name !== obj.properties.name;
 				});
 
 				setStore({

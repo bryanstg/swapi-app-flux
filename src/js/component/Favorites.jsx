@@ -19,25 +19,19 @@ export const Favorites = () => {
 			</button>
 			<div className="dropdown-menu" aria-labelledby="dropdownMenu2">
 				{store.favorites[0] == "" ? (
-					<button className="dropdown-item" type="button">
-						Empty
-					</button>
+					<span className="dropdown-item">Empty</span>
 				) : (
 					store.favorites.map(fav => {
 						return (
-							<button
-								key={fav.uid}
-								className="dropdown-item d-flex justify-content-between"
-								type="button">
+							<span key={fav.uid} className="dropdown-item-text d-flex justify-content-between">
 								{fav.properties.name}
 								<i
 									className="fas fa-trash"
 									onClick={event => {
-										event.preventDefault();
 										actions.deleteFavorite(fav);
 									}}
 								/>
-							</button>
+							</span>
 						);
 					})
 				)}

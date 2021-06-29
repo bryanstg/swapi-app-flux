@@ -13,7 +13,7 @@ export const Cards = ({ attribute }) => {
 			<div className="card-deck card-riel d-flex justify-content-between flex-row flex-nowrap">
 				{store[attribute].results.length >= 10 ? (
 					store[attribute].results.map((element, index) => {
-						return <Card key={element.uid} uid={element.uid} attribute={attribute} />;
+						return <Card key={element.uid + attribute} uid={element.uid} attribute={attribute} />;
 					})
 				) : (
 					<div>{"Loading"}</div>
