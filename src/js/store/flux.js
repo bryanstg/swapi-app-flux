@@ -15,7 +15,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				results: [],
 				info: {}
 			},
-			favorites: []
+			favorites: [""]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -87,6 +87,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 				store[attribute].results.map((element, index) => {
 					const uid = element.uid;
 					getCharacter(uid, attribute);
+				});
+			},
+			addFavorite: objInfo => {
+				const store = getStore();
+
+				if (store.favorites[0] == "") {
+					setStore({
+						favorites: [objInfo]
+					});
+				} else {
+					setStore({
+						favorites: [...store.favorites, objInfo]
+					});
+				}
+			},
+			deleteFavorite: objInfo => {
+				const store = getStore();
+
+				const newFavorites = store.favorites.filter(obj => {
+					return objInfo.uid !== obj.uid;
+				});
+
+				setStore({
+					favorites: newFavorites
 				});
 			}
 		}

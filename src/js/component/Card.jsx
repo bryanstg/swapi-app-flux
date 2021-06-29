@@ -1,13 +1,13 @@
 //React requirements
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
+import { useHistory } from "react-router-dom";
 
 //Components
 import { Context } from "../store/appContext.js";
 
 //Images
 import Placeh from "../../img/400x200.png";
-import { useHistory } from "react-router-dom";
 
 export const Card = ({ uid, attribute }) => {
 	const { store, actions } = useContext(Context);
@@ -42,7 +42,13 @@ export const Card = ({ uid, attribute }) => {
 							}}>
 							{"Learn more"}
 						</button>
-						<button type="button" className="btn btn-outline-warning">
+						<button
+							type="button"
+							className="btn btn-outline-warning"
+							onClick={event => {
+								event.preventDefault();
+								actions.addFavorite(objInfo);
+							}}>
 							<i className="far fa-heart" />
 						</button>
 					</div>
